@@ -120,7 +120,7 @@ uint64_t DevicePtr<T>::getBytes()
 template<typename T>
 void DevicePtr<T>::freePtr()
 {
-    cudaFree(m_dptr);
+    CUDA_SAFE(cudaFree(m_dptr));
 }
 
 } /* end namespace */
