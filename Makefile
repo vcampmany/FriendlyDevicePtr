@@ -12,4 +12,4 @@ interfaceExample: $(DIR)InterfaceExample.cu $(DEPS)
 	$(CC) $(CFLAGS) $(DIR)InterfaceExample.cu -o interfaceExample
 	
 clean:
-	rm simpleExample simpleExample2
+	rm simpleExample interfaceExample

@@ -85,7 +85,7 @@ T* DevicePtr<T>::get()
 template<typename T>
 T* DevicePtr<T>::release()
 {
-    T * p = m_dptr;
+    T *p = m_dptr;
     m_dptr = nullptr;
     m_count = 0;
     m_bytes = 0;

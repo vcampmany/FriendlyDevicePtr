@@ -11,6 +11,7 @@ void runKernelsExample(std::vector<buffer_t> &v_a)
     // Initialize new DevicePtr from an existing allocated device pointer
     buffer_t *d_a;
     cudaMalloc(&d_a, v_a.size() * sizeof(buffer_t));
+    cudaMemcpy(d_a, v_a.data(), v_a.size() * sizeof(buffer_t), cudaMemcpyHostToDevice);
     // The DevicePtr takes ownership of the raw CUDA pointer (d_a)
     // the pointer will be freed at scope exit
     a.reset(d_a, v_a.size());
